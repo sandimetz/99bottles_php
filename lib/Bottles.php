@@ -1,96 +1,95 @@
 <?php
 
-class Bottles
-{
-  private $noMore;
-  private $lastOne;
-  private $penultimate;
-  private $default;
-
-  public function __construct()
-  {
-    $this->noMore = function ($verse) {
-      return
-        "No more bottles of beer on the wall, " .
-        "no more bottles of beer.\n" .
-        "Go to the store and buy some more, " .
-        "99 bottles of beer on the wall.\n";
-    };
-    $this->lastOne = function ($verse) {
-      return
-        "1 bottle of beer on the wall, " .
-        "1 bottle of beer.\n" .
-        "Take it down and pass it around, " .
-        "no more bottles of beer on the wall.\n";
-    };
-    $this->penultimate = function ($verse) {
-      return
-        "2 bottles of beer on the wall, " .
-        "2 bottles of beer.\n" .
-        "Take one down and pass it around, " .
-        "1 bottle of beer on the wall.\n";
-    };
-    $this->default = function ($verse) {
-      return
-        "{$verse->number()} bottles of beer on the wall, " .
-        "{$verse->number()} bottles of beer.\n" .
-        "Take one down and pass it around, " .
-        ($verse->number() - 1) . " bottles of beer on the wall.\n";
-    };
-  }
-
-  public function song()
-  {
+class Bottles {
+  public function song() {
     return $this->verses(99, 0);
   }
 
-  public function verses($finish, $start)
-  {
-    return implode(
-      "\n",
-      array_map(
-        function ($verseNumber) {
-          return $this->verse($verseNumber);
-        },
-        range($finish, $start)
-      )
-    );
-  }
-
-  public function verse($number)
-  {
-    return $this->verseFor($number)->text();
-  }
-
-  private function verseFor($number)
-  {
-    switch ($number) {
-    case 0:  return new Verse($number, $this->noMore);
-    case 1:  return new Verse($number, $this->lastOne);
-    case 2:  return new Verse($number, $this->penultimate);
-    default: return new Verse($number, $this->default);
+  public function verses($bottlesAtStart, $bottlesAtEnd) {
+    $verses = [];
+    foreach (range($bottlesAtStart, $bottlesAtEnd) as $verseNumber) {
+      $verses[] = $this->verse($verseNumber);
     }
+
+    return implode("\n", $verses);
+  }
+
+  public function verse($bottles) {
+    return (string)new Round($bottles);
   }
 }
 
-class Verse
-{
-  protected $number;
-  private $lyrics;
+class Round {
+  public $bottles;
 
-  public function __construct($number, $lyrics)
-  {
-    $this->number = $number;
-    $this->lyrics = $lyrics;
+  public function __construct($bottles) {
+    $this->bottles = $bottles;
   }
 
-  public function text()
-  {
-    return ($this->lyrics)($this);
+  public function __toString() {
+    return $this->challenge() . $this->response();
   }
 
-  public function number()
-  {
-    return $this->number;
+  public function challenge() {
+    return ucfirst($this->bottlesOfBeer()) . ' ' .
+      $this->onWall() . ', ' . $this->bottlesOfBeer() . ".\n";
+  }
+
+  public function response() {
+    return $this->goToTheStoreOrTakeOneDown() . ', ' .
+      $this->bottlesOfBeer() . ' ' . $this->onWall() . ".\n";
+  }
+
+  public function bottlesOfBeer() {
+    return "{$this->anglicizedBottleCount()} " .
+      "{$this->pluralizedBottleForm()} of {$this->beer()}";
+  }
+
+  public function beer() {
+    return 'beer';
+  }
+
+  public function onWall() {
+    return 'on the wall';
+  }
+
+  public function pluralizedBottleForm() {
+    return $this->lastBeer() ? 'bottle' : 'bottles';
+  }
+
+  public function anglicizedBottleCount() {
+    return $this->allOut() ?
+      'no more' : (string)$this->bottles;
+  }
+
+  public function goToTheStoreOrTakeOneDown() {
+    if ($this->allOut()) {
+      $this->bottles = 99;
+      return $this->buyNewBeer();
+    } else {
+      $lyrics = $this->drinkBeer();
+      $this->bottles--;
+      return $lyrics;
+    }
+  }
+
+  public function buyNewBeer() {
+    return 'Go to the store and buy some more';
+  }
+
+  public function drinkBeer() {
+    return "Take {$this->itOrOne()} down and pass it around";
+  }
+
+  public function itOrOne() {
+    return $this->lastBeer() ? 'it' : 'one';
+  }
+
+  public function allOut() {
+    return $this->bottles === 0;
+  }
+
+  public function lastBeer() {
+    return $this->bottles === 1;
   }
 }
