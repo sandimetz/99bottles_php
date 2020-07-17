@@ -5,91 +5,41 @@ class Bottles {
     return $this->verses(99, 0);
   }
 
-  public function verses($bottlesAtStart, $bottlesAtEnd) {
+  public function verses($upper, $lower) {
     $verses = [];
-    foreach (range($bottlesAtStart, $bottlesAtEnd) as $verseNumber) {
-      $verses[] = $this->verse($verseNumber);
+    foreach (range($upper, $lower) as $i) {
+      $verses[] = $this->verse($i);
     }
 
     return implode("\n", $verses);
   }
 
-  public function verse($bottles) {
-    return (string)new Round($bottles);
-  }
-}
-
-class Round {
-  public $bottles;
-
-  public function __construct($bottles) {
-    $this->bottles = $bottles;
-  }
-
-  public function __toString() {
-    return $this->challenge() . $this->response();
-  }
-
-  public function challenge() {
-    return ucfirst($this->bottlesOfBeer()) . ' ' .
-      $this->onWall() . ', ' . $this->bottlesOfBeer() . ".\n";
-  }
-
-  public function response() {
-    return $this->goToTheStoreOrTakeOneDown() . ', ' .
-      $this->bottlesOfBeer() . ' ' . $this->onWall() . ".\n";
-  }
-
-  public function bottlesOfBeer() {
-    return "{$this->anglicizedBottleCount()} " .
-      "{$this->pluralizedBottleForm()} of {$this->beer()}";
-  }
-
-  public function beer() {
-    return 'beer';
-  }
-
-  public function onWall() {
-    return 'on the wall';
-  }
-
-  public function pluralizedBottleForm() {
-    return $this->lastBeer() ? 'bottle' : 'bottles';
-  }
-
-  public function anglicizedBottleCount() {
-    return $this->allOut() ?
-      'no more' : (string)$this->bottles;
-  }
-
-  public function goToTheStoreOrTakeOneDown() {
-    if ($this->allOut()) {
-      $this->bottles = 99;
-      return $this->buyNewBeer();
-    } else {
-      $lyrics = $this->drinkBeer();
-      $this->bottles--;
-      return $lyrics;
+  public function verse($number) {
+    switch ($number) {
+    case 0:
+      return
+        "No more bottles of beer on the wall, " .
+        "no more bottles of beer.\n" .
+        "Go to the store and buy some more, " .
+        "99 bottles of beer on the wall.\n";
+    case 1:
+      return
+        "1 bottle of beer on the wall, " .
+        "1 bottle of beer.\n" .
+        "Take it down and pass it around, " .
+        "no more bottles of beer on the wall.\n";
+    case 2:
+      return
+        "2 bottles of beer on the wall, " .
+        "2 bottles of beer.\n" .
+        "Take one down and pass it around, " .
+        "1 bottle of beer on the wall.\n";
+    default:
+      return
+        "{$number} bottles of beer on the wall, " .
+        "{$number} bottles of beer.\n" .
+        "Take one down and pass it around, " .
+        ($number - 1) . " bottles of beer on the wall.\n";
     }
-  }
-
-  public function buyNewBeer() {
-    return 'Go to the store and buy some more';
-  }
-
-  public function drinkBeer() {
-    return "Take {$this->itOrOne()} down and pass it around";
-  }
-
-  public function itOrOne() {
-    return $this->lastBeer() ? 'it' : 'one';
-  }
-
-  public function allOut() {
-    return $this->bottles === 0;
-  }
-
-  public function lastBeer() {
-    return $this->bottles === 1;
   }
 }
