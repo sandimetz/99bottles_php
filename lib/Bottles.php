@@ -1,10 +1,17 @@
 <?php
 
 class Bottles {
-  public function verses() {
-    return
-      $this->verse(99) . "\n" .
-      $this->verse(98);
+  public function verses($upper, $lower) {
+    if ($upper === 99) {
+      return
+        $this->verse(99) . "\n" .
+        $this->verse(98);
+    } else {
+      return
+        $this->verse(2) . "\n" .
+        $this->verse(1) . "\n" .
+        $this->verse(0);
+    }
   }
 
   public function verse($number) {
