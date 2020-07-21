@@ -1,6 +1,10 @@
 <?php
 
 class Bottles {
+  public function song() {
+    return $this->verses(99, 0);
+  }
+
   public function verses($upper, $lower) {
     $verses = [];
     foreach (range($upper, $lower) as $i) {
