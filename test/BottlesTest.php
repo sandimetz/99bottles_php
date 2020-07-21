@@ -83,6 +83,13 @@ class BottlesTest extends \PHPUnit\Framework\TestCase {
 
   public function test_the_whole_song() {
     $bottles = new Bottles();
-    $this->assertEquals($bottles->verses(99, 0), $bottles->song());
+
+    $verses = [];
+    foreach (range(99, 0) as $number) {
+      $verses[] = $bottles->verse($number);
+    }
+    $expected = implode("\n", $verses);
+
+    $this->assertEquals($expected, $bottles->song());
   }
 }
