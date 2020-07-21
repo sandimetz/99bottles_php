@@ -6,25 +6,12 @@ class Bottles {
   }
 
   public function verses($upper, $lower) {
-    if ($upper === 99 && $lower === 98) {
-      return
-        "99 bottles of beer on the wall, " .
-        "99 bottles of beer.\n" .
-        "Take one down and pass it around, " .
-        "98 bottles of beer on the wall.\n" .
-        "\n" .
-        "98 bottles of beer on the wall, " .
-        "98 bottles of beer.\n" .
-        "Take one down and pass it around, " .
-        "97 bottles of beer on the wall.\n";
-    } else if ($upper === 2) {
-      return
-        $this->verse(2) . "\n" .
-        $this->verse(1) . "\n" .
-        $this->verse(0);
-    } else {
-      return 'ok';
+    $verses = [];
+    foreach (range($upper, $lower) as $i) {
+      $verses[] = $this->verse($i);
     }
+
+    return implode("\n", $verses);
   }
 
   public function verse($number) {
