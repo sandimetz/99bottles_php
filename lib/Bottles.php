@@ -42,4 +42,7 @@ class Bottles {
         ($number-1) . " bottles of beer on the wall.\n";
     }
   }
+
+  public function container() {
+  }
 }
