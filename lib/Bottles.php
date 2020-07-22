@@ -44,5 +44,6 @@ class Bottles {
   }
 
   public function container() {
+    return "bottles";
   }
 }
