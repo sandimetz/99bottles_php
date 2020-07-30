@@ -49,5 +49,6 @@ class Bottles {
   }
 
   public function pronoun() {
+    return "one";
   }
 }
