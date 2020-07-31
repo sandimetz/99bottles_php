@@ -40,6 +40,9 @@ class Bottles {
     }
   }
 
+  public function quantity() {
+  }
+
   public function container($number) {
     if ($number === 1) {
       return "bottle";
