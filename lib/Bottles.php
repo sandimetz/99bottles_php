@@ -67,4 +67,8 @@ class Bottles {
       return "one";
     }
   }
+
+  public function successor($number) {
+    return $number - 1;
+  }
 }
