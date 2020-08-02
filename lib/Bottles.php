@@ -52,6 +52,14 @@ class Bottles {
     }
   }
 
+  public function action($number) {
+    if ($number === 0) {
+      return "Go to the store and buy some more";
+    } else {
+      return "Take {$this->pronoun($number)} down and pass it around";
+    }
+  }
+
   public function pronoun($number) {
     if ($number === 1) {
       return "it";
