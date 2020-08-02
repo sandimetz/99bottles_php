@@ -29,7 +29,7 @@ class Bottles {
       return
         ucfirst($this->quantity($number)) . " {$this->container($number)} " .
           "of beer on the wall, " .
-        "{$number} {$this->container($number)} of beer.\n" .
+        "{$this->quantity($number)} {$this->container($number)} of beer.\n" .
         "Take {$this->pronoun($number)} down and pass it around, " .
         "{$this->quantity($number-1)} {$this->container($number-1)} " .
           "of beer on the wall.\n";
