@@ -20,7 +20,7 @@ class Bottles {
     switch ($number) {
     case 0:
       return
-        ucfirst($this->quantity($number)) . " bottles " .
+        ucfirst((string)$this->quantity($number)) . " bottles " .
           "of beer on the wall, " .
         "no more bottles of beer.\n" .
         "Go to the store and buy some more, " .
