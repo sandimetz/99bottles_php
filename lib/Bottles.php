@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 class Bottles {
   public function song() {
     return $this->verses(99, 0);
