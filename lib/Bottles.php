@@ -40,7 +40,7 @@ class Bottles {
     if ($number === 0) {
       return "no more";
     } else {
-      return $number;
+      return (string)$number;
     }
   }
 
