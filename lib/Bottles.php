@@ -69,6 +69,12 @@ class Bottles {
 }
 
 class BottleNumber {
+  protected $number;
+
+  public function __construct($number) {
+    $this->number = $number;
+  }
+
   public function quantity($number) {
     if ($number === 0) {
       return "no more";
