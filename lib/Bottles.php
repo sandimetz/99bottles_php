@@ -29,11 +29,6 @@ class Bottles {
 
   public function quantity($number) {
     return (new BottleNumber($number))->quantity($number);
-    if ($number === 0) {
-      return "no more";
-    } else {
-      return (string)$number;
-    }
   }
 
   public function container($number) {
