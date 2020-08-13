@@ -32,6 +32,7 @@ class Bottles {
   }
 
   public function container($number) {
+    (new BottleNumber($number))->container($number);
     if ($number === 1) {
       return "bottle";
     } else {
