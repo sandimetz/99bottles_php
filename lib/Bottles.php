@@ -44,6 +44,7 @@ class Bottles {
   }
 
   public function successor($number) {
+    (new BottleNumber($number))->successor($number);
     if ($number === 0) {
       return 99;
     } else {
