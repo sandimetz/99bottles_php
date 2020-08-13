@@ -33,11 +33,6 @@ class Bottles {
 
   public function container($number) {
     return (new BottleNumber($number))->container($number);
-    if ($number === 1) {
-      return "bottle";
-    } else {
-      return "bottles";
-    }
   }
 
   public function action($number) {
