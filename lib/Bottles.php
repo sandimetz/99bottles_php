@@ -36,7 +36,7 @@ class Bottles {
   }
 
   public function action($number) {
-    (new BottleNumber($number))->action($number);
+    return (new BottleNumber($number))->action($number);
     if ($number === 0) {
       return "Go to the store and buy some more";
     } else {
