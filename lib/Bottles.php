@@ -36,7 +36,7 @@ class Bottles {
   }
 
   public function action($number) {
-    return (new BottleNumber($number))->action($number);
+    return (new BottleNumber($number))->action();
   }
 
   public function pronoun($number) {
