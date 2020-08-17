@@ -40,7 +40,7 @@ class Bottles {
   }
 
   public function successor($number) {
-    return (new BottleNumber($number))->successor($number);
+    return (new BottleNumber($number))->successor();
   }
 }
 
