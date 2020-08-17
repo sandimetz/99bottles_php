@@ -64,6 +64,9 @@ class BottleNumber {
   }
 
   public function container() {
+    if (func_num_args() > 0) {
+      throw new Exception('Wrong number of arguments.');
+    }
     if ($this->number === 1) {
       return "bottle";
     } else {
