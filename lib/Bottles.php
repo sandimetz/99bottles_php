@@ -79,7 +79,7 @@ class BottleNumber {
     }
   }
 
-  public function pronoun($number) {
+  public function pronoun() {
     if ($this->number === 1) {
       return "it";
     } else {
