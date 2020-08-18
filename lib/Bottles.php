@@ -25,7 +25,7 @@ class Bottles {
         "of beer on the wall, " .
       "{$bottleNumber} of beer.\n" .
       "{$bottleNumber->action()}, " .
-      "{$nextBottleNumber->quantity()} {$nextBottleNumber->container()} " .
+      "{$nextBottleNumber} " .
         "of beer on the wall.\n";
   }
 }
