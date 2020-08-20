@@ -93,6 +93,7 @@ class BottleNumber0 extends BottleNumber {
 
 class BottleNumber1 extends BottleNumber {
   public function container() {
+    return "bottle";
     if ($this->number === 1) {
       return "bottle";
     } else {
