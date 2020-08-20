@@ -91,6 +91,7 @@ class BottleNumber0 extends BottleNumber {
   }
 
   public function successor() {
+    return 99;
     if ($this->number === 0) {
       return 99;
     } else {
