@@ -62,11 +62,6 @@ class BottleNumber {
 
   public function action() {
     return "Take {$this->pronoun()} down and pass it around";
-    if ($this->number === 0) {
-      return "Go to the store and buy some more";
-    } else {
-      return "Take {$this->pronoun()} down and pass it around";
-    }
   }
 
   public function pronoun() {
