@@ -39,12 +39,6 @@ class Bottles {
         $className = BottleNumber::class;
         break;
     }
-
-    if ($number === 0) {
-      $className = BottleNumber0::class;
-    } else {
-      $className = BottleNumber::class;
-    }
     return new $className($number);
   }
 }
