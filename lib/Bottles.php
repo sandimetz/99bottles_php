@@ -90,3 +90,6 @@ class BottleNumber0 extends BottleNumber {
     return 99;
   }
 }
+
+class BottleNumber1 extends BottleNumber {
+}
