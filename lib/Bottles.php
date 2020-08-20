@@ -99,10 +99,6 @@ class BottleNumber1 extends BottleNumber {
   }
 
   public function pronoun() {
-    if ($this->number === 1) {
-      return "it";
-    } else {
-      return "one";
-    }
+    return "it";
   }
 }
