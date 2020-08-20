@@ -28,7 +28,11 @@ class Bottles {
   }
 
   public function bottleNumberFor($number) {
-    return new BottleNumber($number);
+    if ($number === 0) {
+      return new BottleNumber0($number);
+    } else {
+      return new BottleNumber($number);
+    }
   }
 }
 
