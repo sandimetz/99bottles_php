@@ -41,11 +41,6 @@ class BottleNumber {
     } else {
       $className = BottleNumber::class;
     }
-
-    $className = 'BottleNumber' . $number;
-    if (!class_exists($className)) {
-      $className = BottleNumber::class;
-    }
     return new $className($number);
   }
 
