@@ -32,6 +32,18 @@ class BottleNumber {
 
   public static function for($number) {
     $classNames = [
+      'BottleNumber6',
+      'BottleNumber1',
+      'BottleNumber0',
+      'BottleNumber',
+    ];
+    foreach ($classNames as $className) {
+      if ($className::handles($number)) {
+        new $className($number);
+      }
+    }
+
+    $classNames = [
       0 => 'BottleNumber0',
       1 => 'BottleNumber1',
       6 => 'BottleNumber6',
