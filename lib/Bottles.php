@@ -98,6 +98,10 @@ class BottleNumber1 extends BottleNumber {
 }
 
 class BottleNumber6 extends BottleNumber {
+  public static function handles($number): bool {
+    return $number === 6;
+  }
+
   public function quantity() {
     return "1";
   }
