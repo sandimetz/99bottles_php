@@ -74,6 +74,10 @@ class BottleNumber {
 }
 
 class BottleNumber0 extends BottleNumber {
+  public static function handles($number): bool {
+    return $number === 0;
+  }
+
   public function quantity() {
     return "no more";
   }
