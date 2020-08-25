@@ -44,6 +44,10 @@ class BottleNumber {
     return new $className($number);
   }
 
+  public static function handles($number): bool {
+    return true;
+  }
+
   public function __construct($number) {
     $this->number = $number;
   }
