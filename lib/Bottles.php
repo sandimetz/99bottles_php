@@ -31,6 +31,11 @@ class BottleNumber {
   protected $number;
 
   public static function for($number) {
+    $className = 'BottleNumber' . $number;
+    if (!class_exists($className)) {
+      $className = BottleNumber::class;
+    }
+
     switch ($number) {
     case 0:
       $className = BottleNumber0::class;
