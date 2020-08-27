@@ -99,6 +99,7 @@ class BottleNumber0 extends BottleNumber {
     return BottleNumber::for(99);
   }
 }
+BottleNumber::register(BottleNumber0::class);
 
 class BottleNumber1 extends BottleNumber {
   public static function handles($number): bool {
