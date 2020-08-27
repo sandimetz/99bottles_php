@@ -127,3 +127,4 @@ class BottleNumber6 extends BottleNumber {
     return "six-pack";
   }
 }
+BottleNumber::register(BottleNumber6::class);
