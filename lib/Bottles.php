@@ -28,6 +28,7 @@ class Bottles {
 }
 
 class BottleNumber {
+  protected static $registry = [];
   protected $number;
 
   public static function for($number) {
