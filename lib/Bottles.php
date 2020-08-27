@@ -81,6 +81,7 @@ class BottleNumber {
     return BottleNumber::for($this->number - 1);
   }
 }
+BottleNumber::register(BottleNumber::class);
 
 class BottleNumber0 extends BottleNumber {
   public static function handles($number): bool {
