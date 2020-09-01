@@ -17,6 +17,8 @@ class Bottles {
   }
 
   public function verse($number) {
+    (new BottleVerse($number))->verse($number);
+
     $bottleNumber = BottleNumber::for($number);
 
     return
