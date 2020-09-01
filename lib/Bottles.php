@@ -35,8 +35,8 @@ class BottleVerse {
     $this->number = $number;
   }
 
-  public function verse($number) {
-    $bottleNumber = BottleNumber::for($number);
+  public function lyrics() {
+    $bottleNumber = BottleNumber::for($this->number);
 
     return
       ucfirst("{$bottleNumber} of beer on the wall, ") .
