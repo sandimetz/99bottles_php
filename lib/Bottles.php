@@ -17,7 +17,7 @@ class Bottles {
   }
 
   public function verse($number) {
-    // return (new BottleVerse($number))->lyrics();
+    return (new BottleVerse($number))->lyrics();
     $bottleNumber = BottleNumber::for($number);
 
     return
