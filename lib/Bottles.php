@@ -27,6 +27,9 @@ class Bottles {
   }
 }
 
+class BottleVerse {
+}
+
 class BottleNumber {
   protected $number;
 
