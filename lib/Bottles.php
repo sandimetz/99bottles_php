@@ -17,6 +17,7 @@ class Bottles {
   }
 
   public function verse($number) {
+    // return (new $this->verseTemplate($number))->lyrics();
     return (new BottleVerse($number))->lyrics();
   }
 }
