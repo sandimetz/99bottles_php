@@ -3,6 +3,12 @@
 declare(strict_types = 1);
 
 class Bottles {
+  protected $verseTemplate;
+
+  public function __construct($verseTemplate = BottleVerse::class) {
+    $this->verseTemplate = $verseTemplate;
+  }
+
   public function song() {
     return $this->verses(99, 0);
   }
