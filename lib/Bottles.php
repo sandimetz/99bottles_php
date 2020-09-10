@@ -31,6 +31,10 @@ class Bottles {
 class BottleVerse {
   protected $number;
 
+  public static function lyrics($number) {
+    return (new BottleVerse($number))->_lyrics();
+  }
+
   public function __construct($number) {
     $this->number = $number;
   }
