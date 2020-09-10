@@ -24,7 +24,7 @@ class Bottles {
 
   public function verse($number) {
     // return $this->verseTemplate->lyrics($number);
-    return (new $this->verseTemplate($number))->lyrics();
+    return (new $this->verseTemplate($number))->_lyrics();
   }
 }
 
@@ -35,7 +35,7 @@ class BottleVerse {
     $this->number = $number;
   }
 
-  public function lyrics() {
+  public function _lyrics() {
     $bottleNumber = BottleNumber::for($this->number);
 
     return
