@@ -35,7 +35,7 @@ class BottleVerse {
     $this->number = $number;
   }
 
-  public function _lyrics() {
+  private function _lyrics() {
     $bottleNumber = BottleNumber::for($this->number);
 
     return
