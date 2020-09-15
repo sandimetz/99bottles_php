@@ -23,8 +23,7 @@ class Bottles {
   }
 
   public function verse($number) {
-    // return $this->verseTemplate::lyrics($number);
-    return (new $this->verseTemplate($number))->_lyrics();
+    return $this->verseTemplate::lyrics($number);
   }
 }
 
