@@ -28,16 +28,14 @@ class Bottles {
 }
 
 class BottleVerse {
-  protected $number;
   protected $bottleNumber;
 
   public static function lyrics($number) {
     return (new BottleVerse(BottleNumber::for($number)))->_lyrics();
   }
 
-  public function __construct($number) {
-    $this->number = $number;
-    $this->bottleNumber = $number;
+  public function __construct($bottleNumber) {
+    $this->bottleNumber = $bottleNumber;
   }
 
   private function _lyrics() {
