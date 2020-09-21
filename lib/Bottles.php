@@ -40,7 +40,9 @@ class BottleVerse {
   }
 
   private function _lyrics() {
-    $bottleNumber = BottleNumber::for($this->number);
+    $bottleNumber = $this->number instanceof BottleNumber ?
+      $this->number :
+      BottleNumber::for($this->number);
 
     return
       ucfirst("{$bottleNumber} of beer on the wall, ") .
