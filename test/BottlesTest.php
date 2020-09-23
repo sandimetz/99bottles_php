@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/../lib/Bottles.php";
+require_once __DIR__ . "/../lib/Bottles.php";
 
 class BottlesTest extends \PHPUnit\Framework\TestCase {
   public function test_the_first_verse() {
