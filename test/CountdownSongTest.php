@@ -2,6 +2,12 @@
 
 require_once __DIR__ . "/../lib/Bottles.php";
 
+class VerseFake {
+  public static function lyrics($number) {
+    return "This is verse {$number}.\n";
+  }
+}
+
 class CountdownSongTest extends \PHPUnit\Framework\TestCase {
   public function test_a_couple_verses() {
     $expected =
