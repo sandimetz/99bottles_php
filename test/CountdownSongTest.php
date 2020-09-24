@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/../lib/Bottles.php";
 
-class BottlesTest extends \PHPUnit\Framework\TestCase {
+class CountdownSongTest extends \PHPUnit\Framework\TestCase {
   public function test_a_couple_verses() {
     $expected =
       "99 bottles of beer on the wall, " .
