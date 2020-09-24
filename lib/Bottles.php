@@ -5,7 +5,7 @@ declare(strict_types = 1);
 class CountdownSong {
   protected $verseTemplate, $min, $max;
 
-  public function __construct($verseTemplate, $max = 99, $min = 0) {
+  public function __construct($verseTemplate, $max = 999999, $min = 0) {
     $this->verseTemplate = $verseTemplate;
     $this->max = $max;
     $this->min = $min;
