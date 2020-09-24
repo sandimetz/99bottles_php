@@ -22,20 +22,6 @@ class CountdownSongTest extends \PHPUnit\Framework\TestCase {
     );
   }
 
-  public function test_a_couple_verses_original() {
-    $expected =
-      "99 bottles of beer on the wall, " .
-      "99 bottles of beer.\n" .
-      "Take one down and pass it around, " .
-      "98 bottles of beer on the wall.\n" .
-      "\n" .
-      "98 bottles of beer on the wall, " .
-      "98 bottles of beer.\n" .
-      "Take one down and pass it around, " .
-      "97 bottles of beer on the wall.\n";
-    $this->assertEquals($expected, (new CountdownSong())->verses(99, 98));
-  }
-
   public function test_a_few_verses() {
     $expected =
       "2 bottles of beer on the wall, " .
