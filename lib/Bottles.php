@@ -27,31 +27,6 @@ class CountdownSong {
   }
 }
 
-class Bottles {
-  protected $verseTemplate;
-
-  public function __construct($verseTemplate = BottleVerse::class) {
-    $this->verseTemplate = $verseTemplate;
-  }
-
-  public function song() {
-    return $this->verses(99, 0);
-  }
-
-  public function verses($upper, $lower) {
-    $verses = [];
-    foreach (range($upper, $lower) as $i) {
-      $verses[] = $this->verse($i);
-    }
-
-    return implode("\n", $verses);
-  }
-
-  public function verse($number) {
-    return $this->verseTemplate::lyrics($number);
-  }
-}
-
 class BottleVerse {
   protected $bottleNumber;
 
