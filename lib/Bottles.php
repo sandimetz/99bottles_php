@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 class CountdownSong {
-  protected $verseTemplate;
+  protected $verseTemplate, $min, $max;
 
   public function __construct($verseTemplate = BottleVerse::class) {
     $this->verseTemplate = $verseTemplate;
