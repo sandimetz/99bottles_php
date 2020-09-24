@@ -12,7 +12,7 @@ class CountdownSong {
   }
 
   public function song() {
-    return $this->verses(99, 0);
+    return $this->verses($this->max, $this->min);
   }
 
   public function verses($upper, $lower) {
