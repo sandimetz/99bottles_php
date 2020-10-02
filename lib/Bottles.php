@@ -1,78 +1,90 @@
 <?php
 
 class Bottles {
-  private $noMore;
-  private $lastOne;
-  private $penultimate;
-  private $default;
-
-  public function __construct() {
-    $this->noMore = function (object $verse): string {
-      return
-        "No more bottles of beer on the wall, " .
-        "no more bottles of beer.\n" .
-        "Go to the store and buy some more, " .
-        "99 bottles of beer on the wall.\n";
-    };
-    $this->lastOne = function (object $verse): string {
-      return
-        "1 bottle of beer on the wall, " .
-        "1 bottle of beer.\n" .
-        "Take it down and pass it around, " .
-        "no more bottles of beer on the wall.\n";
-    };
-    $this->penultimate = function (object $verse): string {
-      return
-        "2 bottles of beer on the wall, " .
-        "2 bottles of beer.\n" .
-        "Take one down and pass it around, " .
-        "1 bottle of beer on the wall.\n";
-    };
-    $this->default = function (object $verse): string {
-      return
-        $verse->number() . " bottles of beer on the wall, " .
-        $verse->number() . " bottles of beer.\n" .
-        "Take one down and pass it around, " .
-        ($verse->number() - 1) . " bottles of beer on the wall.\n";
-    };
-  }
-
   public function song(): string {
     return $this->verses(99, 0);
   }
 
-  public function verses(int $finish, int $start): string {
-    return implode("\n", array_map([$this, 'verse'], range($finish, $start)));
+  public function verses(int $bottlesAtStart, int $bottlesAtEnd): string {
+    return implode("\n", array_map([$this, 'verse'], range($bottlesAtStart, $bottlesAtEnd)));
   }
 
-  public function verse(int $number): string {
-    return $this->verseFor($number)->text();
-  }
-
-  private function verseFor(int $number): object {
-    switch ($number) {
-    case 0:  return new Verse($number, $this->noMore);
-    case 1:  return new Verse($number, $this->lastOne);
-    case 2:  return new Verse($number, $this->penultimate);
-    default: return new Verse($number, $this->default);
-    }
+  public function verse(int $bottles): string {
+    return (string)new Round($bottles);
   }
 }
 
-class Verse {
-  protected $number;
-  private $lyrics;
+class Round {
+  public $bottles;
 
-  public function __construct(int $number, object $lyrics) {
-    $this->number = $number;
-    $this->lyrics = $lyrics;
+  public function __construct(int $bottles) {
+    $this->bottles = $bottles;
   }
 
-  public function text(): string {
-    return ($this->lyrics)($this);
+  public function __toString(): string {
+    return $this->challenge() . $this->response();
   }
 
-  public function number(): string {
-    return $this->number;
+  public function challenge(): string {
+    return ucfirst($this->bottlesOfBeer()) . ' ' .
+      $this->onWall() . ', ' . $this->bottlesOfBeer() . ".\n";
+  }
+
+  public function response(): string {
+    return $this->goToTheStoreOrTakeOneDown() . ', ' .
+      $this->bottlesOfBeer() . ' ' . $this->onWall() . ".\n";
+  }
+
+  public function bottlesOfBeer(): string {
+    return $this->anglicizedBottleCount() . ' ' .
+      $this->pluralizedBottleForm() . ' of ' . $this->beer();
+  }
+
+  public function beer(): string {
+    return 'beer';
+  }
+
+  public function onWall(): string {
+    return 'on the wall';
+  }
+
+  public function pluralizedBottleForm(): string {
+    return $this->lastBeer() ? 'bottle' : 'bottles';
+  }
+
+  public function anglicizedBottleCount(): string {
+    return $this->allOut() ?
+      'no more' : (string)$this->bottles;
+  }
+
+  public function goToTheStoreOrTakeOneDown(): string {
+    if ($this->allOut()) {
+      $this->bottles = 99;
+      return $this->buyNewBeer();
+    } else {
+      $lyrics = $this->drinkBeer();
+      $this->bottles--;
+      return $lyrics;
+    }
+  }
+
+  public function buyNewBeer(): string {
+    return 'Go to the store and buy some more';
+  }
+
+  public function drinkBeer(): string {
+    return 'Take ' . $this->itOrOne() . ' down and pass it around';
+  }
+
+  public function itOrOne(): string {
+    return $this->lastBeer() ? 'it' : 'one';
+  }
+
+  public function allOut(): bool {
+    return $this->bottles === 0;
+  }
+
+  public function lastBeer(): bool {
+    return $this->bottles === 1;
   }
 }
