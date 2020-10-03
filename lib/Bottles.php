@@ -1,7 +1,7 @@
 <?php
 
 class Bottles {
-  public function verse() {
+  public function verse(): string {
     return
       "99 bottles of beer on the wall, " .
       "99 bottles of beer.\n" .
