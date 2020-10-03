@@ -1,6 +1,10 @@
 <?php
 
 class Bottles {
+  public function song(): string {
+    return $this->verses(99, 0);
+  }
+
   public function verses(int $upper, int $lower): string {
     return implode(
       "\n",
