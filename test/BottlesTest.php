@@ -29,4 +29,13 @@ class BottlesTest extends \PHPUnit\Framework\TestCase {
       "1 bottle of beer on the wall.\n";
     $this->assertEquals($expected, (new Bottles())->verse(2));
   }
+
+  public function test_verse_1() {
+    $expected =
+      "1 bottle of beer on the wall, " .
+      "1 bottle of beer.\n" .
+      "Take it down and pass it around, " .
+      "no more bottles of beer on the wall.\n";
+    $this->assertEquals($expected, (new Bottles())->verse(1));
+  }
 }
