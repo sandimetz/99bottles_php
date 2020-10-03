@@ -6,18 +6,10 @@ class Bottles {
   }
 
   public function verses(int $upper, int $lower): string {
-    if ($upper === 99 && $lower === 98) {
-      return
-        $this->verse(99) . "\n" .
-        $this->verse(98);
-    } else if ($upper === 2) {
-      return
-        $this->verse(2) . "\n" .
-        $this->verse(1) . "\n" .
-        $this->verse(0);
-    } else {
-      return 'ok';
-    }
+    return implode(
+      "\n",
+      array_map([$this, 'verse'], range($upper, $lower))
+    );
   }
 
   public function verse(int $number): string {
