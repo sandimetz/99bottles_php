@@ -68,6 +68,10 @@ class Bottles {
   }
 
   public function successor(int $number): int {
-    return $number - 1;
+    if ($number === 0) {
+      return 99;
+    } else {
+      return $number - 1;
+    }
   }
 }
