@@ -39,6 +39,7 @@ class Bottles {
   }
 
   public function quantity() {
+    return "no more";
   }
 
   public function container(int $number): string {
