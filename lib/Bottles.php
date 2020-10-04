@@ -46,7 +46,7 @@ class Bottles {
     }
   }
 
-  public function pronoun($number="FIXME") {
+  public function pronoun(int $number): string {
     if ($number === 1) {
       return "it";
     } else {
