@@ -38,7 +38,7 @@ class Bottles {
     }
   }
 
-  public function quantity($number="FIXME") {
+  public function quantity($number=0) {
     return "no more";
   }
 
