@@ -50,6 +50,14 @@ class Bottles {
     }
   }
 
+  public function action(int $number): string {
+    if ($number === 0) {
+      return "Go to the store and buy some more";
+    } else {
+      return "Take " . $this->pronoun($number) . " down and pass it around";
+    }
+  }
+
   public function pronoun(int $number): string {
     if ($number === 1) {
       return "it";
