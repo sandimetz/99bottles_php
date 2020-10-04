@@ -43,7 +43,7 @@ class Bottles {
     }
   }
 
-  public function container($number="FIXME") {
+  public function container(int $number): string {
     if ($number === 1) {
       return "bottle";
     } else {
