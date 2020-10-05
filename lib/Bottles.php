@@ -23,8 +23,8 @@ class Bottles {
         " of beer on the wall, " .
       $bottleNumber->quantity() . " " . $bottleNumber->container() . " of beer.\n" .
       $bottleNumber->action() . ", " .
-      $this->quantity($this->successor($number)) . " " .
-        $this->container($this->successor($number)) . " of beer on the wall.\n";
+      $nextBottleNumber->quantity() . " " . $nextBottleNumber->container() .
+        " of beer on the wall.\n";
   }
 
   public function quantity(int $number): string {
