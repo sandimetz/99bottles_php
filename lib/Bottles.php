@@ -25,7 +25,7 @@ class Bottles {
   }
 
   public function quantity(int $number): string {
-    return (new BottleNumber($number))->quantity($number);
+    return (new BottleNumber($number))->quantity();
   }
 
   public function container(int $number): string {
