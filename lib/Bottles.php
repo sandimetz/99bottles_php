@@ -81,6 +81,9 @@ class BottleNumber {
   }
 
   public function successor(): int {
+    if (func_num_args() > 0) {
+      throw new Exception('Wrong number of arguments.');
+    }
     if ($this->number === 0) {
       return 99;
     } else {
