@@ -37,7 +37,7 @@ class Bottles {
   }
 
   public function pronoun(int $number): string {
-    (new BottleNumber($number))->pronoun($number);
+    return (new BottleNumber($number))->pronoun($number);
     if ($number === 1) {
       return "it";
     } else {
