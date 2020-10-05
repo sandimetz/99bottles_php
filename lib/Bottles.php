@@ -81,7 +81,7 @@ class BottleNumber {
   }
 
   public function successor(int $number): int {
-    if ($number === 0) {
+    if ($this->number === 0) {
       return 99;
     } else {
       return $number - 1;
