@@ -64,3 +64,6 @@ class Bottles {
     }
   }
 }
+
+class BottleNumber {
+}
