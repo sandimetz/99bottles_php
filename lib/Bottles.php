@@ -69,6 +69,9 @@ class BottleNumber {
   }
 
   public function action(): string {
+    if (func_num_args() > 0) {
+      throw new Exception('Wrong number of arguments.');
+    }
     if ($this->number === 0) {
       return "Go to the store and buy some more";
     } else {
