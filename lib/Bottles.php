@@ -60,7 +60,7 @@ class BottleNumber {
     }
   }
 
-  public function container(int $number): string {
+  public function container(): string {
     if ($this->number === 1) {
       return "bottle";
     } else {
