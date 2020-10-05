@@ -37,7 +37,7 @@ class Bottles {
   }
 
   public function successor(int $number): int {
-    return (new BottleNumber($number))->successor($number);
+    return (new BottleNumber($number))->successor();
   }
 }
 
