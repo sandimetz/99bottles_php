@@ -68,7 +68,7 @@ class BottleNumber {
     }
   }
 
-  public function action(int $number): string {
+  public function action(): string {
     if ($this->number === 0) {
       return "Go to the store and buy some more";
     } else {
