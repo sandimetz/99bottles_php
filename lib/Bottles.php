@@ -15,6 +15,8 @@ class Bottles {
   }
 
   public function verse(int $number): string {
+    $bottleNumber = new BottleNumber($number);
+
     return
       ucfirst($this->quantity($number)) . " " . $this->container($number) .
         " of beer on the wall, " .
