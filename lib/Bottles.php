@@ -56,7 +56,7 @@ class BottleNumber {
     if ($this->number === 0) {
       return "no more";
     } else {
-      return (string)$number;
+      return (string)$this->number;
     }
   }
 
