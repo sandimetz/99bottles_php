@@ -53,7 +53,7 @@ class BottleNumber {
   }
 
   public function quantity(int $number): string {
-    if ($number === 0) {
+    if ($this->number === 0) {
       return "no more";
     } else {
       return (string)$number;
