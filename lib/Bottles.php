@@ -29,7 +29,7 @@ class Bottles {
   }
 
   public function container(int $number): string {
-    return (new BottleNumber($number))->container($number);
+    return (new BottleNumber($number))->container();
   }
 
   public function action(int $number): string {
