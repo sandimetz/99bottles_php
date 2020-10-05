@@ -38,11 +38,6 @@ class Bottles {
 
   public function pronoun(int $number): string {
     return (new BottleNumber($number))->pronoun($number);
-    if ($number === 1) {
-      return "it";
-    } else {
-      return "one";
-    }
   }
 
   public function successor(int $number): int {
