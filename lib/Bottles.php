@@ -36,10 +36,6 @@ class Bottles {
     return (new BottleNumber($number))->action();
   }
 
-  public function pronoun(int $number): string {
-    return (new BottleNumber($number))->pronoun();
-  }
-
   public function successor(int $number): int {
     return (new BottleNumber($number))->successor($number);
   }
