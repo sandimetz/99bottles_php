@@ -53,9 +53,6 @@ class BottleNumber {
   }
 
   public function quantity(): string {
-    if (func_num_args() > 0) {
-      throw new Exception('Wrong number of arguments.');
-    }
     if ($this->number === 0) {
       return "no more";
     } else {
