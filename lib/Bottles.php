@@ -16,6 +16,7 @@ class Bottles {
 
   public function verse(int $number): string {
     $bottleNumber = new BottleNumber($number);
+    $nextBottleNumber = new BottleNumber($bottleNumber->successor());
 
     return
       ucfirst($bottleNumber->quantity()) . " " . $bottleNumber->container() .
