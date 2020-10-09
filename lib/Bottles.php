@@ -66,11 +66,6 @@ class BottleNumber {
 
   public function pronoun(): string {
     return "one";
-    if ($this->number === 1) {
-      return "it";
-    } else {
-      return "one";
-    }
   }
 
   public function successor(): int {
