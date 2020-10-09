@@ -80,10 +80,6 @@ class BottleNumber {
 
 class BottleNumber0 extends BottleNumber {
   public function quantity(): string {
-    if ($this->number === 0) {
-      return "no more";
-    } else {
-      return (string)$this->number;
-    }
+    return "no more";
   }
 }
