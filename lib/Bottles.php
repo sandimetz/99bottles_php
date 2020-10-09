@@ -15,7 +15,7 @@ class Bottles {
   }
 
   public function verse(int $number): string {
-    $bottleNumber = $this->bottleNumberFor($number);
+    $bottleNumber = BottleNumber::for($number);
     $nextBottleNumber = $this->bottleNumberFor($bottleNumber->successor());
     // $nextBottleNumber = $bottleNumber->successor();
 
