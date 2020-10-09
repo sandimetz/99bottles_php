@@ -69,7 +69,7 @@ class BottleNumber {
     return "one";
   }
 
-  public function successor(): int {
+  public function successor() {
     return $this->number - 1;
   }
 }
@@ -83,7 +83,7 @@ class BottleNumber0 extends BottleNumber {
     return "Go to the store and buy some more";
   }
 
-  public function successor(): int {
+  public function successor() {
     return 99;
   }
 }
