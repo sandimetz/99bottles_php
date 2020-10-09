@@ -67,7 +67,7 @@ class BottleNumber {
     return "one";
   }
 
-  public function successor() {
+  public function successor(): object {
     return BottleNumber::for($this->number - 1);
   }
 }
@@ -81,7 +81,7 @@ class BottleNumber0 extends BottleNumber {
     return "Go to the store and buy some more";
   }
 
-  public function successor() {
+  public function successor(): object {
     return BottleNumber::for(99);
   }
 }
