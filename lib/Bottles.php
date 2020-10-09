@@ -59,6 +59,7 @@ class BottleNumber {
   }
 
   public function action(): string {
+    return "Take " . $this->pronoun() . " down and pass it around";
     if ($this->number === 0) {
       return "Go to the store and buy some more";
     } else {
