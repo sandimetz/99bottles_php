@@ -87,4 +87,12 @@ class BottleNumber0 extends BottleNumber {
   public function action(): string {
     return "Go to the store and buy some more";
   }
+
+  public function successor(): int {
+    if ($this->number === 0) {
+      return 99;
+    } else {
+      return $this->number - 1;
+    }
+  }
 }
