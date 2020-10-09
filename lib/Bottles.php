@@ -33,10 +33,6 @@ class BottleNumber {
     $this->number = $number;
   }
 
-  public function toString(): string {
-    return $this->quantity() . " " . $this->container();
-  }
-
   public function __toString(): string {
     return $this->quantity() . " " . $this->container();
   }
