@@ -23,7 +23,7 @@ class Bottles {
         " of beer on the wall, " .
       $bottleNumber->toString() . " of beer.\n" .
       $bottleNumber->action() . ", " .
-      $nextBottleNumber->quantity() . " " . $nextBottleNumber->container() .
+      $nextBottleNumber->toString() .
         " of beer on the wall.\n";
   }
 }
