@@ -45,6 +45,21 @@ class Bottles {
 class BottleNumber {
   protected $number;
 
+  public static function for(int $number): object {
+    switch ($number) {
+    case 0:
+      $className = BottleNumber0::class;
+      break;
+    case 1:
+      $className = BottleNumber1::class;
+      break;
+    default:
+      $className = BottleNumber::class;
+      break;
+    }
+    return new $className($number);
+  }
+
   public function __construct($number) {
     $this->number = $number;
   }
