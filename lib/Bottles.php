@@ -36,6 +36,9 @@ class BottleNumber {
     case 1:
       $className = BottleNumber1::class;
       break;
+    case 6:
+      $className = BottleNumber6::class;
+      break;
     default:
       $className = BottleNumber::class;
       break;
