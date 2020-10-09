@@ -28,7 +28,7 @@ class Bottles {
 class BottleNumber {
   protected $number;
 
-  public static function for($number): BottleNumber {
+  public static function for(int $number): BottleNumber {
     switch ($number) {
     case 0:
       $className = BottleNumber0::class;
