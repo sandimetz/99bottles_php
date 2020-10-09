@@ -35,6 +35,10 @@ class BottleNumber {
     $this->number = $number;
   }
 
+  public function toString(): string {
+    return $this->quantity() . " " . $this->container();
+  }
+
   public function quantity(): string {
     if ($this->number === 0) {
       return "no more";
