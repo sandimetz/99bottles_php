@@ -97,4 +97,7 @@ class BottleNumber1 extends BottleNumber {
 }
 
 class BottleNumber6 extends BottleNumber {
+  public function container(): string {
+    return "six-pack";
+  }
 }
