@@ -16,7 +16,6 @@ class Bottles {
 
   public function verse(int $number): string {
     $bottleNumber = BottleNumber::for($number);
-    $nextBottleNumber = $bottleNumber->successor();
 
     return
       ucfirst("{$bottleNumber} of beer on the wall, ") .
