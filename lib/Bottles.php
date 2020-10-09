@@ -19,7 +19,7 @@ class Bottles {
     $nextBottleNumber = new BottleNumber($bottleNumber->successor());
 
     return
-      ucfirst($bottleNumber->quantity()) . " " . $bottleNumber->container() .
+      ucfirst($bottleNumber->toString()) .
         " of beer on the wall, " .
       $bottleNumber->quantity() . " " . $bottleNumber->container() . " of beer.\n" .
       $bottleNumber->action() . ", " .
