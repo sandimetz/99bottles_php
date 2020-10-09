@@ -97,6 +97,7 @@ class BottleNumber1 extends BottleNumber {
   }
 
   public function pronoun(): string {
+    return "it";
     if ($this->number === 1) {
       return "it";
     } else {
