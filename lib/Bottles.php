@@ -27,6 +27,13 @@ class Bottles {
 
   public function bottleNumberFor(int $number): BottleNumber {
     if ($number === 0) {
+      $className = BottleNumber0::class;
+    } else {
+      $className = BottleNumber::class;
+    }
+    new $className($number);
+
+    if ($number === 0) {
       return new BottleNumber0($number);
     } else {
       return new BottleNumber($number);
