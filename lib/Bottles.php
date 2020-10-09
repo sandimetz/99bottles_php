@@ -51,11 +51,7 @@ class BottleNumber {
   }
 
   public function container(): string {
-    if ($this->number === 1) {
-      return "bottle";
-    } else {
-      return "bottles";
-    }
+    return "bottles";
   }
 
   public function action(): string {
