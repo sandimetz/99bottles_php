@@ -21,7 +21,7 @@ class Bottles {
     return
       ucfirst("{$bottleNumber} of beer on the wall, ") .
       "{$bottleNumber} of beer.\n" .
-      $bottleNumber->action() . ", " .
+      "{$bottleNumber->action()}, " .
       (string)$nextBottleNumber . " of beer on the wall.\n";
   }
 }
