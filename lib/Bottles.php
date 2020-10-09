@@ -29,10 +29,6 @@ class BottleNumber {
   protected $number;
 
   public static function for($number): BottleNumber {
-    if ($number instanceof BottleNumber) {
-      return $number;
-    }
-
     switch ($number) {
     case 0:
       $className = BottleNumber0::class;
