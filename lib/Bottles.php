@@ -74,7 +74,7 @@ class BottleNumber {
   }
 
   public function successor() {
-    return $this->number - 1;
+    return BottleNumber::for($this->number - 1);
   }
 }
 
