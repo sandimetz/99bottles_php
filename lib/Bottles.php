@@ -31,13 +31,7 @@ class Bottles {
     } else {
       $className = BottleNumber::class;
     }
-    new $className($number);
-
-    if ($number === 0) {
-      return new BottleNumber0($number);
-    } else {
-      return new BottleNumber($number);
-    }
+    return new $className($number);
   }
 }
 
