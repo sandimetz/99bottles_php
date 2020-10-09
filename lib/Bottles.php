@@ -17,6 +17,7 @@ class Bottles {
   public function verse(int $number): string {
     $bottleNumber = $this->bottleNumberFor($number);
     $nextBottleNumber = $this->bottleNumberFor($bottleNumber->successor());
+    // $nextBottleNumber = $bottleNumber->successor();
 
     return
       ucfirst("{$bottleNumber} of beer on the wall, ") .
