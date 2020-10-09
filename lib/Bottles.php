@@ -90,10 +90,5 @@ class BottleNumber0 extends BottleNumber {
 
   public function action(): string {
     return "Go to the store and buy some more";
-    if ($this->number === 0) {
-      return "Go to the store and buy some more";
-    } else {
-      return "Take " . $this->pronoun() . " down and pass it around";
-    }
   }
 }
