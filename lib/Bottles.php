@@ -37,21 +37,9 @@ class BottleNumber {
     ];
     foreach ($classNames as $className) {
       if ($className::handles($number)) {
-        new $className($number);
+        return new $className($number);
       }
     }
-
-    $classNames = [
-      0 => 'BottleNumber0',
-      1 => 'BottleNumber1',
-      6 => 'BottleNumber6',
-    ];
-    if (isset($classNames[$number])) {
-      $className = $classNames[$number];
-    } else {
-      $className = BottleNumber::class;
-    }
-    return new $className($number);
   }
 
   public static function handles(int $number): bool {
