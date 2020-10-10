@@ -33,7 +33,7 @@ class BottleVerse {
     return (new BottleVerse($number))->_lyrics();
   }
 
-  public function __construct($number) {
+  public function __construct(object $number) {
     $this->number = $number;
   }
 
