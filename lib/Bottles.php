@@ -30,7 +30,6 @@ class BottleVerse {
 
   public static function lyrics(int $number): string {
     return (new BottleVerse(BottleNumber::for($number)))->_lyrics();
-    return (new BottleVerse($number))->_lyrics();
   }
 
   public function __construct(object $number) {
