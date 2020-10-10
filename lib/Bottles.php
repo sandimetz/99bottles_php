@@ -31,7 +31,7 @@ interface CountdownSongVerse {
   public static function lyrics(int $number): string;
 }
 
-class BottleVerse {
+class BottleVerse implements CountdownSongVerse {
   protected $bottleNumber;
 
   public static function lyrics(int $number): string {
