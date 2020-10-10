@@ -111,6 +111,7 @@ class BottleNumber1 extends BottleNumber {
     return "it";
   }
 }
+BottleNumber::register(BottleNumber1::class);
 
 class BottleNumber6 extends BottleNumber {
   public static function handles(int $number): bool {
