@@ -26,23 +26,24 @@ class Bottles {
 }
 
 class BottleNumber {
-  protected static $registry = [];
   protected $number;
 
-  public static function register(string $candidate): void {
-    array_unshift(self::$registry, $candidate);
-  }
-
   public static function for(int $number): BottleNumber {
-    foreach (self::$registry as $candidate) {
-      if ($candidate::handles($number)) {
-        return new $candidate($number);
-      }
+    switch ($number) {
+    case 0:
+      $className = BottleNumber0::class;
+      break;
+    case 1:
+      $className = BottleNumber1::class;
+      break;
+    case 6:
+      $className = BottleNumber6::class;
+      break;
+    default:
+      $className = BottleNumber::class;
+      break;
     }
-  }
-
-  public static function handles(int $number): bool {
-    return true;
+    return new $className($number);
   }
 
   public function __construct(int $number) {
@@ -73,13 +74,8 @@ class BottleNumber {
     return BottleNumber::for($this->number - 1);
   }
 }
-BottleNumber::register(BottleNumber::class);
 
 class BottleNumber0 extends BottleNumber {
-  public static function handles(int $number): bool {
-    return $number === 0;
-  }
-
   public function quantity(): string {
     return "no more";
   }
@@ -92,13 +88,8 @@ class BottleNumber0 extends BottleNumber {
     return BottleNumber::for(99);
   }
 }
-BottleNumber::register(BottleNumber0::class);
 
 class BottleNumber1 extends BottleNumber {
-  public static function handles(int $number): bool {
-    return $number === 1;
-  }
-
   public function container(): string {
     return "bottle";
   }
@@ -107,13 +98,8 @@ class BottleNumber1 extends BottleNumber {
     return "it";
   }
 }
-BottleNumber::register(BottleNumber1::class);
 
 class BottleNumber6 extends BottleNumber {
-  public static function handles(int $number): bool {
-    return $number === 6;
-  }
-
   public function quantity(): string {
     return "1";
   }
@@ -122,4 +108,3 @@ class BottleNumber6 extends BottleNumber {
     return "six-pack";
   }
 }
-BottleNumber::register(BottleNumber6::class);
