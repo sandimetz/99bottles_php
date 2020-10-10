@@ -29,6 +29,10 @@ class BottleNumber {
   protected static $registry = [];
   protected $number;
 
+  public static function register(string $candidate): void {
+    array_unshift(self::$registry, $candidate);
+  }
+
   public static function for(int $number): object {
     $classNames = [
       'BottleNumber6',
