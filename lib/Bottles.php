@@ -16,13 +16,6 @@ class Bottles {
 
   public function verse(int $number): string {
     return (new BottleVerse($number))->lyrics();
-    $bottleNumber = BottleNumber::for($number);
-
-    return
-      ucfirst("{$bottleNumber} of beer on the wall, ") .
-      "{$bottleNumber} of beer.\n" .
-      "{$bottleNumber->action()}, " .
-      "{$bottleNumber->successor()} of beer on the wall.\n";
   }
 }
 
