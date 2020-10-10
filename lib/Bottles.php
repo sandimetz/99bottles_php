@@ -35,6 +35,7 @@ class BottleVerse {
 
   public function __construct(object $number) {
     $this->number = $number;
+    $this->bottleNumber = $number;
   }
 
   private function _lyrics(): string {
