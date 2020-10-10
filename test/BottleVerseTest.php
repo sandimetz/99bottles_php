@@ -9,6 +9,6 @@ class BottleVerseTest extends \PHPUnit\Framework\TestCase {
       "99 bottles of beer.\n" .
       "Take one down and pass it around, " .
       "98 bottles of beer on the wall.\n";
-    $this->assertEquals($expected, (new Bottles())->verse(99));
+    $this->assertEquals($expected, BottleVerse::lyrics(99));
   }
 }
