@@ -34,6 +34,12 @@ class BottleNumber {
   }
 
   public static function for(int $number): object {
+    foreach (self::$registry as $candidate) {
+      if ($candidate::handles($number)) {
+        new $candidate($number);
+      }
+    }
+
     $classNames = [
       'BottleNumber6',
       'BottleNumber1',
