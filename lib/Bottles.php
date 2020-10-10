@@ -26,7 +26,6 @@ class Bottles {
 }
 
 class BottleVerse {
-  protected $number;
   protected $bottleNumber;
 
   public static function lyrics(int $number): string {
@@ -34,7 +33,6 @@ class BottleVerse {
   }
 
   public function __construct(object $number) {
-    $this->number = $number;
     $this->bottleNumber = $number;
   }
 
