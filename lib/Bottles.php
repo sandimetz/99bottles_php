@@ -42,10 +42,10 @@ class BottleVerse {
     $bottleNumber = $this->number;
 
     return
-      ucfirst("{$bottleNumber} of beer on the wall, ") .
-      "{$bottleNumber} of beer.\n" .
-      "{$bottleNumber->action()}, " .
-      "{$bottleNumber->successor()} of beer on the wall.\n";
+      ucfirst("{$this->bottleNumber} of beer on the wall, ") .
+      "{$this->bottleNumber} of beer.\n" .
+      "{$this->bottleNumber->action()}, " .
+      "{$this->bottleNumber->successor()} of beer on the wall.\n";
   }
 }
 
