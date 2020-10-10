@@ -26,6 +26,11 @@ class Bottles {
 }
 
 class BottleVerse {
+  protected $number;
+
+  public function __construct(int $number) {
+    $this->number = $number;
+  }
 }
 
 class BottleNumber {
