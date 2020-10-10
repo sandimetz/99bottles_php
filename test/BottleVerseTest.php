@@ -3,7 +3,7 @@
 require_once __DIR__ . "/../lib/Bottles.php";
 
 class BottleVerseTest extends \PHPUnit\Framework\TestCase {
-  public function test_the_first_verse() {
+  public function test_verse_general_rule_upper_bound() {
     $expected =
       "99 bottles of beer on the wall, " .
       "99 bottles of beer.\n" .
