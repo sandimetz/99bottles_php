@@ -18,7 +18,7 @@ class BottleVerseTest extends \PHPUnit\Framework\TestCase {
       "3 bottles of beer.\n" .
       "Take one down and pass it around, " .
       "2 bottles of beer on the wall.\n";
-    $this->assertEquals($expected, (new Bottles())->verse(3));
+    $this->assertEquals($expected, BottleVerse::lyrics(3));
   }
 
   public function test_verse_2() {
@@ -27,7 +27,7 @@ class BottleVerseTest extends \PHPUnit\Framework\TestCase {
       "2 bottles of beer.\n" .
       "Take one down and pass it around, " .
       "1 bottle of beer on the wall.\n";
-    $this->assertEquals($expected, (new Bottles())->verse(2));
+    $this->assertEquals($expected, BottleVerse::lyrics(2));
   }
 
   public function test_verse_1() {
@@ -36,7 +36,7 @@ class BottleVerseTest extends \PHPUnit\Framework\TestCase {
       "1 bottle of beer.\n" .
       "Take it down and pass it around, " .
       "no more bottles of beer on the wall.\n";
-    $this->assertEquals($expected, (new Bottles())->verse(1));
+    $this->assertEquals($expected, BottleVerse::lyrics(1));
   }
 
   public function test_verse_0() {
@@ -45,6 +45,6 @@ class BottleVerseTest extends \PHPUnit\Framework\TestCase {
       "no more bottles of beer.\n" .
       "Go to the store and buy some more, " .
       "99 bottles of beer on the wall.\n";
-    $this->assertEquals($expected, (new Bottles())->verse(0));
+    $this->assertEquals($expected, BottleVerse::lyrics(0));
   }
 }
