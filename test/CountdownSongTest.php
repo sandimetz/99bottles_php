@@ -32,6 +32,23 @@ class CountdownSongTest extends \PHPUnit\Framework\TestCase {
   }
 
   public function test_the_whole_song() {
+    $expected =
+      "This is verse 47.\n" .
+      "\n" .
+      "This is verse 46.\n" .
+      "\n" .
+      "This is verse 45.\n" .
+      "\n" .
+      "This is verse 44.\n" .
+      "\n" .
+      "This is verse 43.\n";
+    $this->assertEquals(
+      $expected,
+      (new CountdownSong(VerseFake::class, 47, 43))->song()
+    );
+  }
+
+  public function test_the_whole_song_original() {
     $expected = <<< SONG
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
