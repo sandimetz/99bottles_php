@@ -36,19 +36,7 @@ class BottleNumber {
   public static function for(int $number): object {
     foreach (self::$registry as $candidate) {
       if ($candidate::handles($number)) {
-        new $candidate($number);
-      }
-    }
-
-    $classNames = [
-      'BottleNumber6',
-      'BottleNumber1',
-      'BottleNumber0',
-      'BottleNumber',
-    ];
-    foreach ($classNames as $className) {
-      if ($className::handles($number)) {
-        return new $className($number);
+        return new $candidate($number);
       }
     }
   }
