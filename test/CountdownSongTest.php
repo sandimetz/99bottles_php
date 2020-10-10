@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/../lib/Bottles.php";
 
-class VerseFake {
+class VerseFake implements CountdownSongVerse {
   public static function lyrics(int $number): string {
     return "This is verse {$number}.\n";
   }
