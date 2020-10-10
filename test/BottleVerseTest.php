@@ -30,6 +30,15 @@ class BottleVerseTest extends \PHPUnit\Framework\TestCase {
     $this->assertEquals($expected, BottleVerse::lyrics(7));
   }
 
+  public function test_verse_6() {
+    $expected =
+      "1 six-pack of beer on the wall, " .
+      "1 six-pack of beer.\n" .
+      "Take one down and pass it around, " .
+      "5 bottles of beer on the wall.\n";
+    $this->assertEquals($expected, BottleVerse::lyrics(6));
+  }
+
   public function test_verse_2() {
     $expected =
       "2 bottles of beer on the wall, " .
