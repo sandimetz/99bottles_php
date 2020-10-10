@@ -18,7 +18,7 @@ class CountdownSongTest extends \PHPUnit\Framework\TestCase {
     );
   }
 
-  public function test_a_couple_verses() {
+  public function test_verses() {
     $expected =
       "This is verse 99.\n" .
       "\n" .
