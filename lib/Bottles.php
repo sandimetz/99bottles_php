@@ -27,6 +27,7 @@ class Bottles {
 
 class BottleVerse {
   protected $number;
+  protected $bottleNumber;
 
   public static function lyrics(int $number): string {
     return (new BottleVerse(BottleNumber::for($number)))->_lyrics();
