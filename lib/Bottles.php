@@ -15,6 +15,7 @@ class Bottles {
   }
 
   public function verse(int $number): string {
+    // return (new BottleVerse($number))->lyrics();
     $bottleNumber = BottleNumber::for($number);
 
     return
