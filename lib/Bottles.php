@@ -32,8 +32,8 @@ class BottleVerse {
     return (new BottleVerse(BottleNumber::for($number)))->_lyrics();
   }
 
-  public function __construct(object $number) {
-    $this->bottleNumber = $number;
+  public function __construct(object $bottleNumber) {
+    $this->bottleNumber = $bottleNumber;
   }
 
   private function _lyrics(): string {
