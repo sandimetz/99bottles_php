@@ -10,6 +10,9 @@ class VerseFake {
 
 class CountdownSongTest extends \PHPUnit\Framework\TestCase {
   public function test_a_couple_verses() {
+  }
+
+  public function test_a_couple_verses_original() {
     $expected =
       "99 bottles of beer on the wall, " .
       "99 bottles of beer.\n" .
