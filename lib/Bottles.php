@@ -29,6 +29,17 @@ class BottleNumber {
   protected $number;
 
   public static function for(int $number): BottleNumber {
+    $classNames = [
+      0 => 'BottleNumber0',
+      1 => 'BottleNumber1',
+      6 => 'BottleNumber6',
+    ];
+    if (isset($classNames[$number])) {
+      $className = $classNames[$number];
+    } else {
+      $className = BottleNumber::class;
+    }
+
     $className = 'BottleNumber' . $number;
     if (!class_exists($className)) {
       $className = BottleNumber::class;
