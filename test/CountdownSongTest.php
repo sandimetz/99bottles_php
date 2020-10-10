@@ -10,6 +10,16 @@ class VerseFake {
 
 class CountdownSongTest extends \PHPUnit\Framework\TestCase {
   public function test_a_couple_verses() {
+    $expected =
+      "This is verse 99.\n" .
+      "\n" .
+      "This is verse 98.\n" .
+      "\n" .
+      "This is verse 97.\n";
+    $this->assertEquals(
+      $expected,
+      (new CountdownSong(VerseFake::class))->verses(99, 97)
+    );
   }
 
   public function test_a_couple_verses_original() {
